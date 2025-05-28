@@ -1,5 +1,5 @@
 # samapi-docker
-[![CI](https://github.com/siemdejong/samapi-docker/actions/workflows/ci.yml/badge.svg)](https://github.com/siemdejong/samapi-docker/actions/workflows/ci.yml)
+[![CI](https://github.com/siemdejong/samapi-docker/actions/workflows/ci.yaml/badge.svg)](https://github.com/siemdejong/samapi-docker/actions/workflows/ci.yaml)
 
 Provides an unofficial Docker image with [`samapi`](https://github.com/ksugar/samapi).
 Images are generated monthly.
