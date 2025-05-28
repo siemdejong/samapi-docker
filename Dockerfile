@@ -4,7 +4,7 @@ ARG NVIDIA_CUDA_TAG=11.8.0-base-ubuntu20.04
 FROM nvidia/cuda:${NVIDIA_CUDA_TAG}
 
 ARG PYTHON_VERSION=3.10
-ARG PYTORCH_INDEX_URL=https://download.pytorch.org/whl/cu118
+ARG TORCH_CUDA_TAG=cu118
 ARG COMPATIBLE_TORCH_VERSION=2.3.1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -23,7 +23,7 @@ RUN --mount=type=cache,target=${UV_CACHE_DIR} \
     && uv pip install \
         "torch~=${COMPATIBLE_TORCH_VERSION}" \
         torchvision \
-        --index-url ${PYTORCH_INDEX_URL} \
+        --index-url https://download.pytorch.org/whl/${TORCH_CUDA_TAG} \
     && uv pip install git+https://github.com/ksugar/samapi.git
 
 ENV SAMAPI_ROOT_DIR=/.samapi
